@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name="opf_split",
+    name="opfy_split",
     version="0.1",
     author="Luiz Felix",
     author_email="lzcfelix@gmail.com",
