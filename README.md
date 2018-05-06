@@ -1,5 +1,7 @@
 # OPF Helpers
 
+**NOTICE: This is a work-in-progress repo.**
+
 This folder contains helper scripts to generate the cross-validation folds for training,
 evaluation and test of a dataset using both OPF and other Python-based classifiers. The
 need for these scripts steems from two aspects, discussed below.
