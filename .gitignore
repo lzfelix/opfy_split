@@ -1,4 +1,5 @@
 __pycache__/
+.vscode/
 .ipynb_checkpoints/
 opfy_split.egg-info/
 
