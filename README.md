@@ -8,11 +8,9 @@ running both techniques on equal folds.
 This utility fills the gap between the OPF framework, which is implemented in C,
 and the classifiers implemented in Python. This divergence exists because the
 OPF uses files with the `.dat` characteristic extension to save the data to be
-parsed.
+analyzed. The scripts can be used on two ways:
 
-The scripts can be used on two ways:
-
-* To simply create OPF cross-validation folds using a simple interface
+* To simply create OPF cross-validation folds using a simple interface;
 * To map the OPF folds to their corresponding counter parts, allowing direct
 comparison between Python-implemented and OPF classifier.
 
@@ -20,8 +18,8 @@ comparison between Python-implemented and OPF classifier.
 ## Instructions
 
 Since this is a simple wrapper around some of the OPF utility programs, namely
-`opf_split`, `opf_merge` and `opf2txt`. First it's necessary to download,
-compile LibOPF and optionally create an environment variable pointing to its
+`opf_split`, `opf_merge` and `opf2txt`, first it's necessary to download LibOPF,
+compile it and optionally create an environment variable pointing to its
 `bin/` folder named `$OPF_PATH`:
 
 ```bash
@@ -93,9 +91,9 @@ tree
 The numbers on the cross-validation filenames correspond, respectivelly, to the
 number of the cross-validation fold, the corresponding validation fold and the
 corresponding test fold. Notice that although the first two values are equal,
-the validation fold **is not** on the training partition. For instance, if you
-train a classifier with `cross_3_val_3_test_4.dat`, the you should evaluate it
-on `fold_3` and test it on `fold_4`.
+the validation fold **is not** on the training partition. For instance, a classifier
+trained with `cross_3_val_3_test_4.dat`, should be evaluated  on `fold_3` and
+test it on `fold_4`.
 
 
 ## Command line utility arguments
@@ -103,15 +101,15 @@ on `fold_3` and test it on `fold_4`.
 The utility scripts can be invoked with the `-h` flag to provide some help
 instructions, but basically it is possible to pass as argument the `opf_path`
 variable, thus making the use of `$OPF_PATH` optional, to set destination folder
-for the created files and to set the amount of folds to be created (for
+for the created files and to specify the amount of folds to be created (for
 `opfy_opf` only).
 
 
 ## Training a Python classifier
 
 After having installed the opfy_split library, it can also be imported on the
-code to automatically iterate over the `numpy_` folders, restoring the necessary
-folds to train/evaluate and test a classifier:
+code to automatically iterate over the `numpy_{cross, folds}/` folders, restoring
+the necessary folds to train/evaluate and test a classifier:
 
 ```python
 from opf_split import opf_split
@@ -138,7 +136,6 @@ for fold in opf_split.fetch_folds(cross_dir):
 
 ## Notice
 
-This scripts invokes underlying OPF programs, namely `opf_split`, `opf_merge`
-and `opf2txt` using the Python module `subprocess`. It was tested on Linux and
-OSX systems, but not on Windows (this does not necessarily means that it
-doesn't work on this platform).
+This scripts invokes underlying OPF programs, using the Python `subprocess`
+module. It was tested on Linux and OSX systems, but not on Windows (this
+does not necessarily mean that it doesn't work on this platform).
