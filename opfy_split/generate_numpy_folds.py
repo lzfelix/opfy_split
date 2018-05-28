@@ -7,7 +7,7 @@ import numpy as np
 import plac
 from plac import annotations, Annotation
 
-import utils
+from opfy_split import utils
 
 logging.basicConfig(level=logging.INFO)
 
@@ -101,8 +101,8 @@ def main(opf_folder, numpy_folder=None, opf_path=None):
     opf_path = utils.get_opf_path(opf_path)
 
     logging.info('[1/3] Creating target folders')
-    utils.create_dir(os.path.join(opf_folder, './numpy_cross'))
-    utils.create_dir(os.path.join(opf_folder, './numpy_folds'))
+    utils.create_dir(os.path.join(numpy_folder, './numpy_cross'))
+    utils.create_dir(os.path.join(numpy_folder, './numpy_folds'))
 
     logging.info('[2/3] Computing cross validation files.')
     numpyfy_folder(
@@ -119,5 +119,5 @@ def main(opf_folder, numpy_folder=None, opf_path=None):
     )
 
 
-if __name__ == '__main__':
+def _entry_point():
     plac.call(main)

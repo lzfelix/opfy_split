@@ -5,7 +5,7 @@ import logging
 import plac
 from plac import annotations, Annotation
 
-import utils
+from opfy_split import utils
 
 logging.basicConfig(level=logging.INFO)
 AMOUNT_FOLDS = 15
@@ -109,5 +109,5 @@ def main(opf_samples_file, amount_folds=AMOUNT_FOLDS, destination=None,
     store_folds(folds_path)
 
 
-if __name__ == '__main__':
+def _entry_point():
     plac.call(main)

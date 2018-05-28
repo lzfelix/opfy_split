@@ -13,5 +13,11 @@ setup(
     install_requires=[
         'plac==0.9.6',
         'numpy==1.14.2',
-    ]
+    ],
+    entry_points={
+        'console_scripts': [
+            'opfy_opf = opfy_split.generate_opf_folds:_entry_point',
+            'opfy_numpy = opfy_split.generate_numpy_folds:_entry_point',
+        ]
+    }
 )
