@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='opfy_split',
-    version='0.1',
+    version='0.2',
     author='Luiz Felix',
     author_email='lzcfelix@gmail.com',
     description=('Utility to sync numpy and OPF folds to train, evaluate and '
