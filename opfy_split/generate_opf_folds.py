@@ -45,7 +45,7 @@ def store_folds(folds_path):
 
 
 @annotations(
-    opf_samples_file=Annotation('Data on OPF .dat format', type=str),
+    opf_samples_file=Annotation('Path to the OPF .dat file', type=str),
     amount_folds=Annotation('Amount of folds', 'option', 'k', int),
     destination=Annotation('Where to store the new .dat files. Defaults to the '
                            'samples file folder', type=str, kind='option'),
