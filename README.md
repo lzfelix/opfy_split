@@ -136,6 +136,6 @@ for fold in opf_split.fetch_folds(cross_dir):
 
 ## Notice
 
-This scripts invokes underlying OPF programs, using the Python `subprocess`
+This utility invokes underlying OPF programs using the Python `subprocess`
 module. It was tested on Linux and OSX systems, but not on Windows (this
 does not necessarily mean that it doesn't work on this platform).
